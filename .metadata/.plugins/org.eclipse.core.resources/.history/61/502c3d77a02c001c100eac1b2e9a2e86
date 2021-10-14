@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+
+#include "Cliente.h"
+#include "Output.h"
+
+#define TRUE 0
+#define FALSE 1
+#define TAM 20
+#define MINIMO 1
+#define MAXIMO 10
+#define ITERADOR 0
+
+int main(void) {
+
+
+	setbuf(stdout,NULL);
+
+	Clientes listado[TAM];
+    Recoleccion cliente[TAM];
+
+	int respuesta;
+
+
+	if (InicializarClientes(listado,TAM) != -1 && InicializarPedidos(cliente,TAM) != -1){
+
+
+   do{
+			MostrarMenu();
+			Opcion();
+    	    scanf("%d",&respuesta);
+    	    ScanearRespuesta(respuesta);
+
+	}while(respuesta != 11);
+	 }
+
+
+
+
+
+
+	/*printf("Ingrese el ID de un ciente: ");
+	scanf("%d",&idCliente);
+	printf("Ingrese los kilos para el cliente: ");
+	scanf("%f",&kilosTotales);
+	PedidoRecoleccion(listado,cliente,TAM,idCliente,kilosTotales);*/
+
+	return EXIT_SUCCESS;
+
+}
+

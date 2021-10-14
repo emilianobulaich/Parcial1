@@ -1,0 +1,44 @@
+#ifndef CLIENTEYPEDIDO_H_
+#define CLIENTEYPEDIDO_H_
+
+struct{
+	 int idCliente;
+	 char nombreEmpresa[51];
+	 char localidad[25];
+	 char cuit[12];
+	 char direccion[21];
+	 int isEmpty;
+}typedef Clientes;
+
+struct{
+	int idRecoleccion;
+	int idCliente;
+	int cantidadPedidosPendientes;
+	int cantidadPedidosCompletados;
+	int estado;
+	float kilos;
+	int isEmpty;
+}typedef Recoleccion;
+
+int InicializarClientes(Clientes* listado, int len);
+int InicializarPedidos(Recoleccion* cliente, int len);
+void PedirCliente(Clientes* listado, int idCliente, int len);
+int AniadirCliente(Clientes* listado, int len, int id, char nombreEmpresa[],char cuit[],char direccion[], char localidad[]);
+int EncontrarClientePorId(Clientes* listado, int len,int id);
+void ModificarCliente( Clientes* listado, int len, int id);
+int EliminarCliente(Clientes* listado, int len, int id);
+float IngresarFlotante(char mensaje[] ,float numMin ,float numMax);
+int CrearPedido(Clientes* listado, Recoleccion* listadoRecoleccion, int len,  int idRecoleccion);
+void ImprimirClientes(Clientes* listado, int len);
+void ImprimirClientesConPedido(Clientes* listado,Recoleccion* listadoRecoleccion, int len);
+void MostrarListadoPorCliente(Clientes* listado, Recoleccion* listadoRecoleccion, int len);
+void MostrarListadoPorPedidoPendiente(Clientes* listado, Recoleccion* listadoRecoleccion, int len);
+void MostrarListadoPorPedidoCompletado(Clientes* listado, Recoleccion* listadoRecoleccion, int len);
+void MostrarPedidoPorLocalidad(Clientes* listado,Recoleccion* listadoRecoleccion,int len);
+void CambiarEstadoPedido(Clientes* listado ,Recoleccion* listadoRecoleccion, int len , float* acumuladorPolipropileno);
+void CalcularPromedio(Clientes* listado,Recoleccion* listadoRecoleccion,int len, float polipropileno);
+
+
+#endif /* CLIENTEYPEDIDO_H_ */
+
+

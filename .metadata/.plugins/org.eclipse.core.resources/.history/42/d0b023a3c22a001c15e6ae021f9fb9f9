@@ -1,0 +1,14 @@
+/*
+ * Menu.h
+ *
+ *  Created on: 11 oct. 2021
+ *      Author: Yeller
+ */
+
+#ifndef MENU_H_
+#define MENU_H_
+
+void MostrarMenu (void);
+void Opcion (void);
+void ImprimirClientes(Clientes* listado, int len);
+#endif /* MENU_H_ */

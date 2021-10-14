@@ -1,0 +1,155 @@
+#include "Output.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+
+#include "ClienteYPedido.h"
+#define TRUE 0
+#define FALSE 1
+
+
+void MostrarMenu (void){
+	    printf("------------------> MENU <------------------");
+	    printf("\n***************************************\n");
+		printf("          Elija una opcion: \n");
+		printf("*****************************************\n");
+		printf("|  1. Alta de Cliente                   |\n");
+		printf("|  2. Modificar datos del Cliente    	|\n");
+		printf("|  3. Baja de cliente                   |\n");
+		printf("|  4. Crear pedido de Recoleccion    	|\n");
+		printf("|  5. Procesar residuos              	|\n");
+		printf("|  6. Imprimir Clientes     	     	|\n");
+		printf("|  7. Imprimir Pedidos pendientes    	|\n");
+		printf("|  8. Imprimir Pedidos procesados    	|\n");
+		printf("|  9. Pedidos por localidad             |\n");
+		printf("|  10. Promedio de propileno reciclado  |\n");
+		printf("|  11. Salir                            |\n");
+		printf("*****************************************\n");
+}
+void Opcion (void){
+	printf("\nOpcion: ");
+}
+void ScanearRespuesta(Clientes* listado,Recoleccion* cliente, int len , int respuesta){
+	switch (respuesta) {
+	int idInicial = 0;
+	int idModificar;
+	int idEliminar;
+	int idRecoleccion = 0;
+	float cantidadPolipropileno;
+	    			case 1:
+	    				idInicial++;
+	    				PedirCliente(listado,idInicial,len);
+	    				break;
+	    			case 2:
+	    				printf("¿Que cliente quiere modificar? Elegir por ID: ");
+	    				scanf("%d",&idModificar);
+	    				ModificarCliente(listado,len,idModificar);
+	    				break;
+
+	    			case 3:
+	    				printf("¿Que cliente quiere eliminar? Elegir por ID:");
+	    				scanf("%d",&idEliminar);
+	    				EliminarCliente(listado,len,idEliminar);
+
+
+	    				break;
+	    			case 4:
+	    				idRecoleccion++;
+	    				ImprimirClientes(listado, len);
+
+
+						CrearPedido(listado,cliente,len,idRecoleccion);
+
+	                    break;
+	    			case 5:
+	    				CambiarEstadoPedido(listado,cliente,len,&cantidadPolipropileno);
+	    				break;
+	    			case 6:
+
+	    				MostrarListadoPorCliente(listado,cliente,len);
+
+	    				break;
+	    			case 7:
+	    				MostrarListadoPorPedidoPendiente(listado,cliente,len);
+	    				break;
+	    			case 8:
+
+	    				MostrarListadoPorPedidoCompletado(listado,cliente,len);
+	    				break;
+	    			case 9:
+
+
+	    				MostrarPedidoPorLocalidad(listado,cliente,len);
+	    				break;
+	    			case 10:
+
+	    				CalcularPromedio(listado,cliente,idInicial,cantidadPolipropileno);
+
+	    				break;
+
+	    		}
+}
+
+
+void ImprimirClientes(Clientes* listado, int len){
+	if(listado != NULL && len >= 0){
+		for(int i = 0; i < len; i++){
+			if(listado[i].isEmpty == FALSE){
+
+				printf("ID: %d\n",listado[i].idCliente);
+				printf("Nombre empresa: %s\n",listado[i].nombreEmpresa);
+				printf("Cuit: %s\n",listado[i].cuit);
+				printf("Localidad: %s \n",listado[i].localidad);
+				printf("Direccion: %s\n",listado[i].direccion);
+
+			}
+
+		}
+	}
+	else{
+		printf("ERROR");
+	}
+
+}
+
+//6
+void MostrarListadoPorCliente(Clientes* listado, Recoleccion* listadoRecoleccion, int len){
+   	if(listado != NULL && listadoRecoleccion != NULL && len ){
+   		for(int i = 0; i < len; i++){
+				if(listado[i].isEmpty == FALSE && listadoRecoleccion[i].isEmpty == FALSE){
+				printf("ID: %d \n",listado[i].idCliente);
+				printf("ID Recoleccion: %d \n",listadoRecoleccion[i].idRecoleccion);
+				puts(listado[i].cuit);
+				printf("Cantidad de pedidos pendientes : %d\n ",listadoRecoleccion[i].cantidadPedidosPendientes);
+
+				}
+   		}
+   	}
+   	else{
+   		printf("ERROR");
+   	}
+ }
+//7) Imprimir Pedidos pendientes: Se imprimirá una lista de los pedidos que se encuentren en estado
+//“Pendiente” con la información: Cuit del cliente, dirección del cliente, cantidad de kilos a recolectar.
+
+float IngresarFlotante(char mensaje[] ,float numMin ,float numMax){
+	setbuf(stdout, NULL);
+
+	float num;
+
+	do{
+	printf("%s entre %f y %f:",mensaje,numMin,numMax);
+	fflush(stdin);
+	scanf("%f",&num);
+	}while(num < numMin || num > numMax);
+
+    return num;
+}
+//9
+
+
+
+
+

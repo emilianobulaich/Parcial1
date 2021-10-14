@@ -1,0 +1,16 @@
+
+#ifndef MENU_H_
+#define MENU_H_
+
+struct{
+	 int id;
+	 char nombreEmpresa[51];
+	 char localidad[25];
+	 char cuit[12];
+	 char direccion[21];
+	 int isEmpty;
+}typedef Clientes;
+void MostrarMenu (void);
+void Opcion (void);
+void ImprimirClientes(Clientes* listado, int len);
+#endif /* MENU_H_ */

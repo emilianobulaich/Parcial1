@@ -1,0 +1,9 @@
+20:22:14 **** Rebuild of configuration Debug for project Parcialprog ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcialprog.o" "..\\src\\Parcialprog.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pedido.o" "..\\src\\Pedido.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Cliente.o" "..\\src\\Cliente.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Output-input.o" "..\\src\\Output-input.c" 
+gcc -o Parcialprog.exe "src\\Cliente.o" "src\\Output-input.o" "src\\Parcialprog.o" "src\\Pedido.o" 
+Info: Nothing to build for Parcialprog
+Info: Nothing to build for Parcialprog

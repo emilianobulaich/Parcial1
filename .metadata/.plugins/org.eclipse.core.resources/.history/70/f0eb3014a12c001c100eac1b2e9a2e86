@@ -1,0 +1,47 @@
+#include "Output.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+
+#include "ClienteYPedido.h"
+//4
+int CrearPedido(Clientes* listado, Recoleccion* listadoRecoleccion, int len,  int idRecoleccion){
+     int retorno = -1;
+
+     int idCliente;
+     float kilos;
+
+
+
+
+			printf("¿A que cliente quiere añadirle un pedido?");
+
+			scanf("%d",&idCliente);
+			printf("¿De cuantos kilos es el pedido?");
+
+			scanf("%f",&kilos);
+			 if(listado != NULL && listadoRecoleccion != NULL && len >= 0 && idCliente >=0 && idRecoleccion >= 0 ){
+				 retorno = 0;
+					 for(int i = 0; i < len; i++){
+						 if(listadoRecoleccion[i].isEmpty == TRUE && listado[i].idCliente == idCliente){
+
+							 listadoRecoleccion[i].idCliente = idCliente;
+							 listadoRecoleccion[i].idRecoleccion = idRecoleccion;
+							 listadoRecoleccion[i].kilos = kilos;
+							 listadoRecoleccion[i].cantidadPedidosPendientes = 1;
+							 listadoRecoleccion[i].estado = 1;
+							 listadoRecoleccion[i].isEmpty = FALSE;
+
+							 break;
+						 }
+						 else if(listadoRecoleccion[i].isEmpty == FALSE && listado[i].idCliente == idCliente){
+							 listadoRecoleccion[i].cantidadPedidosPendientes++;
+						 }
+					 }
+
+			 }
+     	return retorno;
+
+}
