@@ -132,4 +132,3 @@ void CalcularPromedio(Clientes* listado,Recoleccion* listadoRecoleccion,int len,
 
 #endif /* CLIENTEYPEDIDO_H_ */
 
-

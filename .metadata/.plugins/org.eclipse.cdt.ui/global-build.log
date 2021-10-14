@@ -1,9 +1,40 @@
-20:22:14 **** Rebuild of configuration Debug for project Parcialprog ****
+20:48:40 **** Rebuild of configuration Debug for project ParcialProg ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcialprog.o" "..\\src\\Parcialprog.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pedido.o" "..\\src\\Pedido.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Cliente.o" "..\\src\\Cliente.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ParcialProg.o" "..\\src\\ParcialProg.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Localidad.o" "..\\src\\Localidad.c" 
+gcc -o ParcialProg.exe "src\\Cliente.o" "src\\Localidad.o" "src\\ParcialProg.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\ParcialProg.o: in function `main':
+C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:30: undefined reference to `InicializarPedidos'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:34: undefined reference to `MostrarMenu'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:36: undefined reference to `IngresarEntero'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:60: undefined reference to `ImprimirClientes'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:63: undefined reference to `CrearPedido'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:67: undefined reference to `SepararResiduos'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:71: undefined reference to `MostrarListadoPorCliente'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:75: undefined reference to `MostrarListadoPorPedidoPendiente'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:79: undefined reference to `MostrarListadoPorPedidoCompletado'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:84: undefined reference to `MostrarPedidoPorLocalidad'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:88: undefined reference to `CalcularPromedio'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:92: undefined reference to `MensajeDeDespedida'
+collect2.exe: error: ld returned 1 exit status
+20:49:08 **** Incremental Build of configuration Debug for project ParcialProg ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pedido.o" "..\\src\\Pedido.c" 
+gcc -o ParcialProg.exe "src\\Cliente.o" "src\\Localidad.o" "src\\ParcialProg.o" "src\\Pedido.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\ParcialProg.o: in function `main':
+C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:34: undefined reference to `MostrarMenu'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:36: undefined reference to `IngresarEntero'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:60: undefined reference to `ImprimirClientes'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:71: undefined reference to `MostrarListadoPorCliente'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/ParcialProg.c:92: undefined reference to `MensajeDeDespedida'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\Pedido.o: in function `SepararResiduos':
+C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/Pedido.c:133: undefined reference to `IngresarFlotante'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/Pedido.c:135: undefined reference to `IngresarFlotante'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\Yeller\Desktop\ParcialProgramacion\ParcialProg\Debug/../src/Pedido.c:137: undefined reference to `IngresarFlotante'
+collect2.exe: error: ld returned 1 exit status
+20:49:58 **** Incremental Build of configuration Debug for project ParcialProg ****
+Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Output-input.o" "..\\src\\Output-input.c" 
-gcc -o Parcialprog.exe "src\\Cliente.o" "src\\Output-input.o" "src\\Parcialprog.o" "src\\Pedido.o" 
-Info: Nothing to build for Parcialprog
-Info: Nothing to build for Parcialprog
+gcc -o ParcialProg.exe "src\\Cliente.o" "src\\Localidad.o" "src\\Output-input.o" "src\\ParcialProg.o" "src\\Pedido.o" 
+Info: Nothing to build for ParcialProg

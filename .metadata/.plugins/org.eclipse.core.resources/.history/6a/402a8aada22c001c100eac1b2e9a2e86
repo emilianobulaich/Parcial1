@@ -1,9 +1,0 @@
-
-#ifndef OUTPUT_H_
-#define OUTPUT_H_
-
-
-void MostrarMenu (void);
-void Opcion (void);
-
-#endif /* OUTPUT_H_ */

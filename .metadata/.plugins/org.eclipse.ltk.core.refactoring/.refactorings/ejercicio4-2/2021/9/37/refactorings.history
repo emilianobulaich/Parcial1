@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ejercicio4-2/src/Biblioteca.h&apos; to &apos;validarTipo.h&apos;" description="Rename resource &apos;Biblioteca.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Biblioteca.h" name="validarTipo.h" stamp="1631217276780" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ejercicio4-2/src/Biblioteca.c&apos; to &apos;validarTipo.c&apos;" description="Rename resource &apos;Biblioteca.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Biblioteca.c" name="validarTipo.c" stamp="1631217366836" updateReferences="true"/>
-</session>

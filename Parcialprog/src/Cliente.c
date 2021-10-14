@@ -146,4 +146,3 @@ int EliminarCliente(Clientes* listado, int len, int id){
     }
 	return retorno;
 }
-

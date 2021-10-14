@@ -1,9 +1,0 @@
-
-#ifndef OUTPUT_H_
-#define OUTPUT_H_
-
-
-void MostrarMenu (void);
-void Opcion (void);
-float IngresarFlotante(char mensaje[] ,float numMin ,float numMax);
-#endif /* OUTPUT_H_ */
